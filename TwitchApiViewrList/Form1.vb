@@ -1,12 +1,8 @@
-﻿Imports System.Web
-Imports System.Web.Services
-Imports System.Web.Script.Serialization
+﻿Imports System.Web.Script.Serialization
 Imports System.IO
 Imports System.Net
-Imports System.Runtime.Serialization.Json
-Imports System.Text
 
-'asas
+
 Public Class Form1
     Public username As String = "enraged_ares"
 
