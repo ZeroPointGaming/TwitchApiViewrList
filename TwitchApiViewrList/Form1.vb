@@ -19,6 +19,10 @@ Public Class Form1
         Dim url_string = "https://tmi.twitch.tv/group/user/" + username + "/chatters"
 
         Try
+            ListBox1.Items.Clear()
+            ListBox2.Items.Clear()
+            ListBox3.Items.Clear()
+
             'Request JSON
             Dim Req As HttpWebRequest
             Dim Ret As HttpWebResponse = Nothing
@@ -36,7 +40,26 @@ Public Class Form1
 
             'Viewers
             For Each member In DATA_OBJECT.chatters.viewers
-                'TextBox1.Text += member.ToString() + Environment.NewLine
+                ListBox1.Items.Add(member)
+            Next
+
+            'Moderators
+            For Each member In DATA_OBJECT.chatters.moderators
+                ListBox2.Items.Add(member)
+            Next
+
+            'Others
+            For Each member In DATA_OBJECT.chatters.admins
+                ListBox3.Items.Add(member)
+            Next
+            For Each member In DATA_OBJECT.chatters.vips
+                ListBox3.Items.Add(member)
+            Next
+            For Each member In DATA_OBJECT.chatters.staff
+                ListBox3.Items.Add(member)
+            Next
+            For Each member In DATA_OBJECT.chatters.global_mods
+                ListBox3.Items.Add(member)
             Next
         Catch ex As Exception
             'debugging exceptions
