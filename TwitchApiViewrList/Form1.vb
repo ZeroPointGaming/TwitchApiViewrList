@@ -4,7 +4,7 @@ Imports System.Net
 
 
 Public Class Form1
-    Public username As String = "enraged_ares"
+    Public username As String = My.Settings.username.ToString()
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Hide()
@@ -18,31 +18,38 @@ Public Class Form1
     Private Sub FetchData(username As String)
         Dim url_string = "https://tmi.twitch.tv/group/user/" + username + "/chatters"
 
-        'Request JSON
-        Dim Req As HttpWebRequest
-        Dim Ret As HttpWebResponse = Nothing
-        Dim SR As StreamReader
-        Req = DirectCast(WebRequest.Create(url_string), HttpWebRequest)
-        Ret = DirectCast(Req.GetResponse(), HttpWebResponse)
-        SR = New StreamReader(Ret.GetResponseStream())
-        Dim Raw As String = Nothing
-        Raw = SR.ReadToEnd()
+        Try
+            'Request JSON
+            Dim Req As HttpWebRequest
+            Dim Ret As HttpWebResponse = Nothing
+            Dim SR As StreamReader
+            Req = DirectCast(WebRequest.Create(url_string), HttpWebRequest)
+            Ret = DirectCast(Req.GetResponse(), HttpWebResponse)
+            SR = New StreamReader(Ret.GetResponseStream())
+            Dim Raw As String = Nothing
+            Raw = SR.ReadToEnd()
 
-        'Process the requested JSON into usable dictionaries
-        Dim DATA_OBJECT As New Chatters()
-        Dim JavaScriptSerialization As New JavaScriptSerializer()
-        DATA_OBJECT = JavaScriptSerialization.Deserialize(Raw, DATA_OBJECT.GetType)
+            'Process the requested JSON into usable dictionaries
+            Dim DATA_OBJECT As New Chatters()
+            Dim JavaScriptSerialization As New JavaScriptSerializer()
+            DATA_OBJECT = JavaScriptSerialization.Deserialize(Raw, DATA_OBJECT.GetType)
 
-        'Viewers
-        For Each member In DATA_OBJECT.chatters.viewers
-            TextBox1.Text += member.ToString() + Environment.NewLine
-        Next
+            'Viewers
+            For Each member In DATA_OBJECT.chatters.viewers
+                'TextBox1.Text += member.ToString() + Environment.NewLine
+            Next
+        Catch ex As Exception
+            'debugging exceptions
+            MessageBox.Show(ex.ToString)
+        End Try
     End Sub
 
+    'Automatically refresh userlist every 30 seconds
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         FetchData(username)
     End Sub
 
+    'Refresh userlist manually
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         FetchData(username)
     End Sub

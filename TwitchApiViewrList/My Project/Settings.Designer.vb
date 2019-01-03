@@ -56,13 +56,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property Setting() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("twitch_username")>  _
+        Public Property username() As String
             Get
-                Return CType(Me("Setting"),String)
+                Return CType(Me("username"),String)
             End Get
             Set
-                Me("Setting") = value
+                Me("username") = value
             End Set
         End Property
     End Class
