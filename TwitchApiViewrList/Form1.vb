@@ -52,14 +52,16 @@ Public Class Form1
             For Each member In DATA_OBJECT.chatters.admins
                 ListBox3.Items.Add(member)
             Next
-            For Each member In DATA_OBJECT.chatters.vips
-                ListBox3.Items.Add(member)
-            Next
             For Each member In DATA_OBJECT.chatters.staff
                 ListBox3.Items.Add(member)
             Next
             For Each member In DATA_OBJECT.chatters.global_mods
                 ListBox3.Items.Add(member)
+            Next
+
+            'Subscribers
+            For Each member In DATA_OBJECT.chatters.vips
+                ListBox4.Items.Add(member)
             Next
         Catch ex As Exception
             'debugging exceptions

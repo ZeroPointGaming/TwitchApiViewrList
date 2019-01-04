@@ -27,19 +27,23 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.ListBox4 = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Timer1
@@ -54,7 +58,7 @@ Partial Class Form1
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button1.Location = New System.Drawing.Point(12, 361)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(200, 23)
+        Me.Button1.Size = New System.Drawing.Size(389, 23)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Force Refresh"
         Me.Button1.UseVisualStyleBackColor = False
@@ -68,6 +72,20 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(242, 100)
         Me.Panel1.TabIndex = 1
         '
+        'ListBox1
+        '
+        Me.ListBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.HorizontalScrollbar = True
+        Me.ListBox1.IntegralHeight = False
+        Me.ListBox1.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(240, 98)
+        Me.ListBox1.TabIndex = 0
+        '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -77,6 +95,20 @@ Partial Class Form1
         Me.Panel2.Size = New System.Drawing.Size(242, 100)
         Me.Panel2.TabIndex = 2
         '
+        'ListBox2
+        '
+        Me.ListBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.ListBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ListBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.HorizontalScrollbar = True
+        Me.ListBox2.IntegralHeight = False
+        Me.ListBox2.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(240, 98)
+        Me.ListBox2.TabIndex = 1
+        '
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -85,6 +117,20 @@ Partial Class Form1
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(242, 100)
         Me.Panel3.TabIndex = 2
+        '
+        'ListBox3
+        '
+        Me.ListBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.ListBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ListBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.HorizontalScrollbar = True
+        Me.ListBox3.IntegralHeight = False
+        Me.ListBox3.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.Size = New System.Drawing.Size(240, 98)
+        Me.ListBox3.TabIndex = 1
         '
         'Label1
         '
@@ -109,69 +155,61 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(12, 242)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(62, 13)
+        Me.Label3.Size = New System.Drawing.Size(79, 13)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Subscribers"
+        Me.Label3.Text = "Other Members"
         '
         'Button2
         '
         Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Location = New System.Drawing.Point(248, 2)
+        Me.Button2.Location = New System.Drawing.Point(383, 5)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(16, 16)
         Me.Button2.TabIndex = 6
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'ListBox1
+        'Label4
         '
-        Me.ListBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.HorizontalScrollbar = True
-        Me.ListBox1.IntegralHeight = False
-        Me.ListBox1.Location = New System.Drawing.Point(0, 0)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(240, 98)
-        Me.ListBox1.TabIndex = 0
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(260, 8)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(62, 13)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Subscribers"
         '
-        'ListBox2
+        'Panel4
         '
-        Me.ListBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ListBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ListBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.HorizontalScrollbar = True
-        Me.ListBox2.IntegralHeight = False
-        Me.ListBox2.Location = New System.Drawing.Point(0, 0)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(240, 98)
-        Me.ListBox2.TabIndex = 1
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.ListBox4)
+        Me.Panel4.Location = New System.Drawing.Point(260, 21)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(140, 334)
+        Me.Panel4.TabIndex = 7
         '
-        'ListBox3
+        'ListBox4
         '
-        Me.ListBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ListBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ListBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.HorizontalScrollbar = True
-        Me.ListBox3.IntegralHeight = False
-        Me.ListBox3.Location = New System.Drawing.Point(0, 0)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(240, 98)
-        Me.ListBox3.TabIndex = 1
+        Me.ListBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.ListBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ListBox4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ListBox4.FormattingEnabled = True
+        Me.ListBox4.HorizontalScrollbar = True
+        Me.ListBox4.IntegralHeight = False
+        Me.ListBox4.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox4.Name = "ListBox4"
+        Me.ListBox4.Size = New System.Drawing.Size(138, 332)
+        Me.ListBox4.TabIndex = 1
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(266, 395)
+        Me.ClientSize = New System.Drawing.Size(413, 395)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -189,6 +227,7 @@ Partial Class Form1
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -207,4 +246,7 @@ Partial Class Form1
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents ListBox3 As ListBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents ListBox4 As ListBox
 End Class
