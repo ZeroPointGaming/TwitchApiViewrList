@@ -63,9 +63,6 @@ Public Class Form1
             For Each member In DATA_OBJECT.chatters.vips
                 ListBox4.Items.Add(member)
             Next
-
-            SR.Dispose()
-            Raw = Nothing
         Catch ex As Exception
             'debugging exceptions
             MessageBox.Show(ex.ToString)
