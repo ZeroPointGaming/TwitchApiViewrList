@@ -22,6 +22,7 @@ Public Class Form1
             ListBox1.Items.Clear()
             ListBox2.Items.Clear()
             ListBox3.Items.Clear()
+            ListBox4.Items.Clear()
 
             'Request JSON
             Dim Req As HttpWebRequest
