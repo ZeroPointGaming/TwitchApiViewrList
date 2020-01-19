@@ -4,8 +4,6 @@ Imports System.Net
 
 
 Public Class Form1
-    Public username As String = My.Settings.username
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Hide()
         SettingForms.Show()
@@ -13,17 +11,10 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
-
-        Try
-            username = My.Settings.username
-            FetchData(username)
-            Catch ex As Exception
-
-        End try
     End Sub
 
     Private Sub FetchData(username As String)
-        Dim url_string = "https://tmi.twitch.tv/group/user/" + username + "/chatters"
+        Dim url_string = "https://tmi.twitch.tv/group/user/" + My.Settings.username + "/chatters"
 
         Try
             ListBox1.Items.Clear()
@@ -78,18 +69,18 @@ Public Class Form1
             Next
         Catch ex As Exception
             'debugging exceptions
-            MessageBox.Show(ex.ToString)
+            Messagebox.show("Please enter a username on the settings tab!")
         End Try
     End Sub
 
     'Automatically refresh userlist every 30 seconds
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        FetchData(username)
+        FetchData(My.Settings.username)
     End Sub
 
     'Refresh userlist manually
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        FetchData(username)
+        FetchData(My.Settings.username)
     End Sub
 End Class
 
