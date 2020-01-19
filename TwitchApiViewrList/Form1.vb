@@ -4,7 +4,7 @@ Imports System.Net
 
 
 Public Class Form1
-    Public username As String = My.Settings.username.ToString()
+    Public username As String = My.Settings.username
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Hide()
@@ -46,6 +46,11 @@ Public Class Form1
 
             'Moderators
             For Each member In DATA_OBJECT.chatters.moderators
+                ListBox2.Items.Add(member)
+            Next
+
+            'Broadcasters
+            For Each member In DATA_OBJECT.chatters.broadcaster
                 ListBox2.Items.Add(member)
             Next
 
@@ -93,6 +98,8 @@ End Class
 
 <SerializableAttribute>
 Public Class Groups
+    <Runtime.Serialization.DataMember>
+    Public broadcaster As String()
     <Runtime.Serialization.DataMember>
     Public vips As String()
     <Runtime.Serialization.DataMember>
