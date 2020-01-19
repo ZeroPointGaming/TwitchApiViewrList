@@ -13,6 +13,13 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
+
+        Try
+            username = My.Settings.username
+            FetchData(username)
+            Catch ex As Exception
+
+        End try
     End Sub
 
     Private Sub FetchData(username As String)
